@@ -17,11 +17,23 @@ var roll = function(normal){
 	}
 };
 
+var showDice = function(value){
+	"use strict";
+
+	var $die = $("<div>").addClass("die");
+	var $num = $("<p>").addClass("die-val").text(value);
+
+	$die.append($num);
+
+	$("#dice-field").append($die);
+};
+
 var main = function(){
 	"use strict";
 
 	var selected = $("#normalDice").val(),
 		numDice,
+		rollValue,
 		diceThrows = [];
 
 	console.log("Let's roll some dice, Vane!");
@@ -50,17 +62,24 @@ var main = function(){
 
 		console.log("You rolled the dice.");
 
+		$("#dice-field").empty();
+
 		if(selected === $("#normalDice").val()){
 			console.log("Normal Dice rolled");
 
-			for(var i = 0; i < numDice; i++){	
-				diceThrows.push(roll(true));
+			for(var i = 0; i < numDice; i++){
+				rollValue = roll(true);
+				diceThrows.push(rollValue);
+				showDice(rollValue);
+
 			}
 		} else if(selected === $("#numberedDice").val()){
 			console.log("Numbered Dice rolled");
 
 			for(var i = 0; i < numDice; i++){
+				rollValue = roll(false);
 				diceThrows.push(roll(false));
+				showDice(rollValue);
 			}
 		}
 
