@@ -20,7 +20,9 @@ var roll = function(normal){
 var main = function(){
 	"use strict";
 
-	var selected = $("#normalDice").val();
+	var selected = $("#normalDice").val(),
+		numDice,
+		diceThrows = [];
 
 	console.log("Let's roll some dice, Vane!");
 
@@ -43,17 +45,26 @@ var main = function(){
 	});
 
 	$("#roll-btn").on("click", function(){
+		diceThrows = [];
+		numDice = $("#numDice").val();
+
 		console.log("You rolled the dice.");
 
 		if(selected === $("#normalDice").val()){
 			console.log("Normal Dice rolled");
 
-			console.log("Rolled: " + roll(true));
+			for(var i = 0; i < numDice; i++){	
+				diceThrows.push(roll(true));
+			}
 		} else if(selected === $("#numberedDice").val()){
 			console.log("Numbered Dice rolled");
 
-			console.log("Rolled: " + roll(false));
+			for(var i = 0; i < numDice; i++){
+				diceThrows.push(roll(false));
+			}
 		}
+
+		console.log(diceThrows);
 	});
 };
 
