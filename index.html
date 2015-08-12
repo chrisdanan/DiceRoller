@@ -20,10 +20,13 @@
 					<input type="radio" name="dice-type" value="numberedDice" id="numberedDice" />
 				</div>
 				<div id="die-numbers-div">
-					<label for="startNum" id="start-label" class="disabled">Start Number</label>
-					<input type="text" name="startNum" id="startNum" class="disabled" disabled="true" value="1" />
-					<label for="endNum" id="end-label" class="disabled">End Number</label>
-					<input type="text" name="endNum" id="endNum" class="disabled" disabled="true" value="6" />
+					<label for="startNum" id="start-label" class="disabled">Start Number*</label>
+					<input type="number" name="startNum" id="startNum" class="disabled" disabled="true" value="1" min="0" max="1000" />
+					<label for="endNum" id="end-label" class="disabled">End Number*</label>
+					<input type="number" name="endNum" id="endNum" class="disabled" disabled="true" value="6" min="1" max="1000" />
+					<div>
+						<p>*Numbers can only range from 0 - 1000</p>
+					</div>
 				</div>
 				<div id="number-dice-div">
 					<label for="numDice" id="num-dice-label">Number of Dice</label>

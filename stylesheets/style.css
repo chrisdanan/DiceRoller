@@ -41,13 +41,17 @@ label, input, select{
 	color: #b8b8b8;
 }
 
+input[type="number"]{
+	font-size: 1.1em;
+}
+
 #button-field{
 	margin: auto;
 	padding-bottom: 3em;
 	text-align: center;
 }
 
-button:hover, input[type=radio]:hover{
+button:hover, input[type=radio]:hover, #numDice{
 	cursor: pointer;
 }
 
@@ -89,9 +93,21 @@ button:hover, input[type=radio]:hover{
     height:100%;
     width:100%;
     text-align: center;
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 
+#die-numbers-div div{
+	width: 50%;
+	margin: 0;
+	transform: translate(50%, 0);
+	padding: 0;
+
+}
+
+#die-numbers-div div p{
+	font-size: .7em;
+	color: #b8b8b8;
+}
 
 @media (min-width: 280px){
 	.die{

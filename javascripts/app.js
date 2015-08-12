@@ -10,6 +10,34 @@ var roll = function(normal){
 		min = parseInt($("#startNum").val());
 		max = parseInt($("#endNum").val());
 
+		if(isNaN(min) || isNaN(max)){
+			min = 1;
+			max = 6;
+		}
+
+		if(min < 0){
+			min = 0;
+		}
+
+		if(max < 1){
+			max = 1;
+		}
+
+		if(min > 999){
+			min = 999;
+		}
+
+		if(max > 1000){
+			max = 1000;
+		}
+
+		if(max <= min){
+			max = min + 1;
+		}
+
+		$("#startNum").val(min);
+		$("#endNum").val(max);
+		
 		console.log("Min: " + min);
 		console.log("Max: " + max);
 
