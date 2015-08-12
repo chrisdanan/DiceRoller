@@ -37,7 +37,7 @@ var roll = function(normal){
 
 		$("#startNum").val(min);
 		$("#endNum").val(max);
-		
+
 		console.log("Min: " + min);
 		console.log("Max: " + max);
 
@@ -45,18 +45,50 @@ var roll = function(normal){
 	}
 };
 
-var showDice = function(value){
+var showDice = function(value, type){
 	"use strict";
 
-	var $die = $("<div>").addClass("die");
-	var $content = $("<div>").addClass("content");
-	var $table = $("<div>").addClass("table");
-	var $tableCell = $("<div>").addClass("table-cell");
+	var $die = $("<div>");
 
-	$tableCell.append(value);
-	$table.append($tableCell);
-	$content.append($table);
-	$die.append($content);
+	if(type === "normal"){
+		$die.addClass("normal-die");
+
+		switch(value){
+			case 1:
+				$die.addClass("Die1");
+				break;
+			case 2:
+				$die.addClass("Die2");
+				break;
+			case 3:
+				$die.addClass("Die3");
+				break;
+			case 4:
+				$die.addClass("Die4");
+				break;
+			case 5:
+				$die.addClass("Die5");
+				break;
+			case 6:
+				$die.addClass("Die6");
+				break;
+			default:
+				$die.addClass("Die1");
+				break;
+		}
+	} else if(type === "numbered"){
+
+		var $die = $("<div>").addClass("die");
+		var $content = $("<div>").addClass("content");
+		var $table = $("<div>").addClass("table");
+		var $tableCell = $("<div>").addClass("table-cell");
+
+		$tableCell.append(value);
+
+		$table.append($tableCell);
+		$content.append($table);
+		$die.append($content);
+	}
 
 	$("#dice").append($die).hide().fadeIn();
 };
@@ -107,7 +139,7 @@ var main = function(){
 			for(var i = 0; i < numDice; i++){
 				rollValue = roll(true);
 				diceThrows.push(rollValue);
-				showDice(rollValue);
+				showDice(rollValue, "normal");
 
 			}
 		} else if(selected === $("#numberedDice").val()){
@@ -116,7 +148,7 @@ var main = function(){
 			for(var i = 0; i < numDice; i++){
 				rollValue = roll(false);
 				diceThrows.push(roll(false));
-				showDice(rollValue);
+				showDice(rollValue, "numbered");
 			}
 		}
 

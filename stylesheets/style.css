@@ -1,5 +1,49 @@
 /* Stylesheet for DiceRoller project */
 
+/* Sprites */
+
+.Die6, .Die2, .Die3, .Die5, .Die4, .Die1{
+	background: url("../assets/images/sprites.png") no-repeat;
+}
+
+.Die6{
+	background-position: -207px -104px ;
+	width: 100px;
+	height: 100px;
+}
+
+.Die2{
+	background-position: -104px 0;
+	width: 100px;
+	height: 100px;
+}
+
+.Die3{
+	background-position: -207px 0;
+	width: 100px;
+	height: 100px;
+}
+
+.Die5{
+	background-position: -104px -104px ;
+	width: 100px;
+	height: 100px;
+}
+
+.Die4{
+	background-position: 0 -104px ;
+	width: 100px;
+	height: 100px;
+}
+
+.Die1{
+	background-position: 0 0;
+	width: 100px;
+	height: 100px;
+}
+
+/* Project */
+
 body{
 	font-size: 100%;
 	font-family: verdana, arial, sans-serif;
@@ -62,6 +106,12 @@ button:hover, input[type=radio]:hover, #numDice{
 	font-size: 1.1em;
 }
 
+.normal-die{
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
 /* Reference for creating the dice: http://stackoverflow.com/questions/20456694/grid-of-responsive-squares */
 .die{
 	position: relative;
@@ -114,6 +164,11 @@ button:hover, input[type=radio]:hover, #numDice{
 		display: inline-block;
 		width: 35%;
 		padding-bottom: 35%;
+		margin: 5%;
+	}
+
+	.normal-die{
+		display: inline-block;
 		margin: 5%;
 	}
 }
