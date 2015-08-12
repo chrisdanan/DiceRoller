@@ -21,11 +21,16 @@ var showDice = function(value){
 	"use strict";
 
 	var $die = $("<div>").addClass("die");
-	var $num = $("<p>").addClass("die-val").text(value);
+	var $content = $("<div>").addClass("content");
+	var $table = $("<div>").addClass("table");
+	var $tableCell = $("<div>").addClass("table-cell");
 
-	$die.append($num);
+	$tableCell.append(value);
+	$table.append($tableCell);
+	$content.append($table);
+	$die.append($content);
 
-	$("#dice-field").append($die);
+	$("#dice").append($die).hide().fadeIn();
 };
 
 var main = function(){
@@ -43,8 +48,10 @@ var main = function(){
 
 		selected = $("#normalDice").val();
 
-		$("#startNum").prop("disabled", true);
-		$("#endNum").prop("disabled", true);
+		$("#startNum").prop("disabled", true).toggleClass("disabled");
+		$("#endNum").prop("disabled", true).toggleClass("disabled");
+		$("#start-label").toggleClass("disabled");
+		$("#end-label").toggleClass("disabled");
 	});
 
 	$("#numberedDice").on("click", function(){
@@ -52,8 +59,10 @@ var main = function(){
 
 		selected = $("#numberedDice").val();
 
-		$("#startNum").prop("disabled", false);
-		$("#endNum").prop("disabled", false);
+		$("#startNum").prop("disabled", false).toggleClass("disabled");
+		$("#endNum").prop("disabled", false).toggleClass("disabled");
+		$("#start-label").toggleClass("disabled");
+		$("#end-label").toggleClass("disabled");
 	});
 
 	$("#roll-btn").on("click", function(){
@@ -62,7 +71,7 @@ var main = function(){
 
 		console.log("You rolled the dice.");
 
-		$("#dice-field").empty();
+		$("#dice").empty();
 
 		if(selected === $("#normalDice").val()){
 			console.log("Normal Dice rolled");

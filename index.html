@@ -4,40 +4,52 @@
 	<title>Dice Roller Application</title>
 	<meta charset="utf-8" />
 	<meta name="author" content="Christopher Dancarlo Danan" />
-	<link rel="stylsheet" type="text/css" href="stylesheets/style.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 	<div class="container">
-		<div id="controls">
-			<label for="normalDice">Regular Dice</label>
-			<input type="radio" name="dice-type" value="normalDice" id="normalDice" checked="true" />
-			<label for="numberedDice">Numbered Dice</label>
-			<input type="radio" name="dice-type" value="numberedDice" id="numberedDice" />
-			<label for="startNum">Start Number</label>
-			<input type="text" name="startNum" id="startNum" disabled="true" value="1" />
-			<label for="endNum">End Number</label>
-			<input type="text" name="endNum" id="endNum" disabled="true" value="6" />
+		<div id="left-container">
+			<div id="controls">
+				<div id="normal-dice-div">
+					<label for="normalDice" id="normal-dice-label">Regular Dice</label>
+					<input type="radio" name="dice-type" value="normalDice" id="normalDice" checked="true" />
+				</div>
+				<div id="numbered-dice-div">
+					<label for="numberedDice" id="numbered-dice-label">Numbered Dice</label>
+					<input type="radio" name="dice-type" value="numberedDice" id="numberedDice" />
+				</div>
+				<div id="die-numbers-div">
+					<label for="startNum" id="start-label" class="disabled">Start Number</label>
+					<input type="text" name="startNum" id="startNum" class="disabled" disabled="true" value="1" />
+					<label for="endNum" id="end-label" class="disabled">End Number</label>
+					<input type="text" name="endNum" id="endNum" class="disabled" disabled="true" value="6" />
+				</div>
+				<div id="number-dice-div">
+					<label for="numDice" id="num-dice-label">Number of Dice</label>
+					<select name="numDice" id="numDice">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+			</div>
 
-			<label for="numDice">Number of Dice</label>
-			<select name="numDice" id="numDice">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-			</select>
+			<div id="button-field">
+				<button id="roll-btn">Roll The Dice!</button>
+			</div>
 		</div>
-
-		<div id="dice-field">
-		</div>
-
-		<div id="button-field">
-			<button id="roll-btn">Roll The Dice!</button>
+		<div id="right-container">
+			<div id="dice-field">
+				<div id="dice"></div>
+			</div>
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

@@ -1,0 +1,209 @@
+/* Stylesheet for DiceRoller project */
+
+body{
+	font-size: 100%;
+	font-family: verdana, arial, sans-serif;
+}
+
+
+#container{
+	width: 87.5%;
+}
+
+#left-container{
+	border-bottom: .15em solid black;
+}
+
+#controls div{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#controls, #dice-field, #button-field{
+	width: 100%;
+}
+
+#dice-field{
+	min-height: 682px;
+}
+
+#dice{
+	margin: auto;
+	width: 90%;
+}
+
+label, input, select{
+	display: inline-block;
+	width: 100%;
+}
+
+.disabled{
+	color: #b8b8b8;
+}
+
+#button-field{
+	margin: auto;
+	padding-bottom: 3em;
+	text-align: center;
+}
+
+button:hover, input[type=radio]:hover{
+	cursor: pointer;
+}
+
+#roll-btn{
+	border: none;
+	width: 80%;
+	height: 3em;
+	font-size: 1.1em;
+}
+
+/* Reference for creating the dice: http://stackoverflow.com/questions/20456694/grid-of-responsive-squares */
+.die{
+	position: relative;
+	width: 30%;
+	padding-bottom: 30%;
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	overflow: hidden;
+	border: 1px solid black;
+}
+
+.content {
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+}
+
+.table{
+    display:table;
+    height:100%;
+    width:100%;
+}
+
+.table-cell{
+    display:table-cell;
+    vertical-align:middle;
+    height:100%;
+    width:100%;
+    text-align: center;
+    font-size: 4vw;
+}
+
+
+@media (min-width: 280px){
+	.die{
+		display: inline-block;
+		width: 35%;
+		padding-bottom: 35%;
+		margin: 5%;
+	}
+}
+
+@media (min-width: 329px){
+	#normal-dice-div{
+		float: left;
+		width: 50%;
+	}
+
+	#numbered-dice-div{
+		float: right;
+		width: 50%;
+	}
+
+	#normal-dice-label, #normalDice, #numbered-dice-label, #numberedDice{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+	}
+
+	input[type=radio]{
+		transform: translate(45%, 0);
+	}
+
+	#die-numbers-div{
+		width: 100%;
+		overflow: auto;
+	}
+
+	#start-label, #end-label{
+		display: inline-block;
+		width: 40%;
+		text-align: right;
+	}
+
+	#startNum, #endNum{
+		display: inline-block;
+		width: 50%;
+	}
+
+	#num-dice-label{
+		display: inline-block;
+		width: 40%;
+		text-align: right;
+	}
+
+	#numDice{
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+@media (min-width: 600px){
+	.die{
+		display: inline-block;
+		width: 25%;
+		padding-bottom: 25%;
+		margin: 3%;
+	}
+}
+
+@media (min-width: 700px){
+
+	body{
+		font-size: 1.3em;
+	}
+	#left-container{
+		float: left;
+		width: 40%;
+		border-bottom: none;
+		border-right: .1em solid black;
+	}
+
+	#right-container{
+		float: right;
+		width: 55%;
+	}
+
+	#dice-field{
+		min-height: 500px;
+	}
+
+	#normal-dice-div, #numbered-dice-div{
+		float: none;
+	}
+
+	#normal-dice-label, #numbered-dice-label{
+		display: inline-block;
+		width: 70%;
+		text-align: right;
+	}
+
+	#normalDice, #numberedDice{
+		display: inline-block;
+		width: 25%;
+	}
+
+	#controls div{
+		margin-bottom: 10%;
+	}
+
+	.die{
+		display: inline-block;
+		width: 20%;
+		padding-bottom: 20%;
+		margin: 3%;
+	}
+}
